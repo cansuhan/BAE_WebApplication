@@ -16,7 +16,7 @@ public class Tarot {
 	// Primary Key
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private  long id;
+	private long id;
 	
 	// Set column names
 	@Column(nullable = false)
