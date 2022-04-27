@@ -27,7 +27,8 @@ public class Tarot {
 	private String upright;
 	@Column
 	private String reversed;
-	
+  
+  
 	// Default Constructor
 	public Tarot() {}
 	
@@ -41,7 +42,7 @@ public class Tarot {
 	}
 	
 	// Used for reading/selecting (and testing)
-	public Tarot(long id, int number, String card, String upright, String reversed, String zodiac) {
+	public Tarot(long id, int number, String card, String upright, String reversed) {
 		super();
 		this.id = id;
 		this.number = number;
@@ -91,7 +92,6 @@ public class Tarot {
 				+ reversed + "]";
 	}
 
-	
 	@Override
 	public int hashCode() {
 		return Objects.hash(card, id, number, reversed, upright);
