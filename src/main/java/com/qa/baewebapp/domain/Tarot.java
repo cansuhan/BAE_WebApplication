@@ -100,7 +100,7 @@ public class Tarot {
 				+ reversed + ", zodiac=" + zodiac + "]";
 	}
 
-	// 
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(card, id, number, reversed, upright, zodiac);
