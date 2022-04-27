@@ -17,15 +17,14 @@ public class Tarot {
 	private  long id;
 	
 	// Set column names
-	@Column(name = "Card No")
 	private int number;
-	@Column(name = "Card", nullable = false) 	// This column cannot be null
+	@Column(nullable = false) 	// This column cannot be null
 	private String card;
-	@Column(name = "UprightMeaning")
+	@Column(name = "Upright")
 	private String upright;
-	@Column(name = "ReversedMeaning")
+	@Column(name = "Reversed")
 	private String reversed;
-	@Column(name = "ZodiacSign")
+	@Column(name = "Zodiac")
 	private String zodiac;
 	
 	
