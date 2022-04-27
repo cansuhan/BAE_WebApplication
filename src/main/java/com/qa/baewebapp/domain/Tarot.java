@@ -7,25 +7,24 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="tarot")
 public class Tarot {
 	
 	// Primary Key
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private  long id;
+	private long id;
 	
 	// Set column names
-	@Column(name = "Card No")
+	@Column(name = "number", unique = true)
 	private int number;
-	@Column(name = "Card", nullable = false) 	// This column cannot be null
+	@Column(nullable = false) 	// This column cannot be null
 	private String card;
-	@Column(name = "UprightMeaning")
 	private String upright;
-	@Column(name = "ReversedMeaning")
 	private String reversed;
-	@Column(name = "ZodiacSign")
 	private String zodiac;
 	
 	
