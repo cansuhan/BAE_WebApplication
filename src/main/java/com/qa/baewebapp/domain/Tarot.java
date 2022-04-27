@@ -119,6 +119,6 @@ public class Tarot {
 				&& Objects.equals(reversed, other.reversed) && Objects.equals(upright, other.upright)
 				&& Objects.equals(zodiac, other.zodiac);
 	}
-	
+
 	
 }
