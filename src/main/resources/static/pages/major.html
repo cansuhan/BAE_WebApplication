@@ -27,56 +27,61 @@
     </div>
 
     <header>
-        <div class="centreText">
-            <h2><b>Major Arcana Cards</b></h2>
-            <br>
-            <p>Plese see the cards below</p>
+        <div class="d-flex flex-column h-100" onload="getAll()">
+            <div class="centreText">
+                <h2 class="nav-link active px-3" aria-disabled="true">
+                    <b>Tarot Cards: Major Arcana</b>
+                </h2>
+            </div>
         </div>
     </header>
+    <br />
 
-    <!-- <br /> -->
-    <div class="backToBlack" onload="getAll()">
-        <div>
-            <a class="nav-link active px-3" aria-disabled="true">Tarot Cards: Major Arcana Entry Form</a>
-        </div>
-    </div>
-
-    <div class="backToWhite centreText">
+    <div class="main-block">
         <div id="form-div">
             <form name="createForm">
+
                 <div id="input-header">
-                    <h5>Add A New Tarot Card (Major Arcana)</h1>
+                    <h5>Add New Tarot Card</h5>
                 </div>
+
                 <div class="form-floating">
                     <input type="text" class="form-control card-input" id="floatingInput" placeholder="Tarot Card"
                         autocomplete="off" name="card">
                     <label for="floatingInput">Tarot Card</label>
                 </div>
+
                 <div class="form-floating">
                     <input type="number" class="form-control number-input" id="floatingInput"
                         placeholder="Tarot Card Number" autocomplete="off" name="number">
                     <label for="floatingPassword">Card Number</label>
                 </div>
+
                 <div class="form-floating">
                     <input type="text" class="form-control upright-input" id="floatingInput" placeholder="Upright"
                         autocomplete="off" name="upright">
                     <label for="floatingPassword">Upright Meaning</label>
                 </div>
+
                 <div class="form-floating">
                     <input type="text" class="form-control reversed-input" id="floatingInput" placeholder="Reversed"
                         autocomplete="off" name="upright">
                     <label for="floatingPassword">Reversed Meaning</label>
                 </div>
+
                 <div>
                     <button id="create-btn" class="btn btn-sm btn-primary form-btns" type="button"
                         onClick="create()">Create</button>
                     <button id="reset-btn" class="btn btn-sm btn-danger form-btns" type="reset">Reset</button>
                 </div>
-            </form>
-        </div>
-        
-        <div id="results-div"></div>
 
+            </form>
+
+            <div id="results-div"></div>
+
+        </div>
+
+        <!-- <br /> -->
 
         <!-- Modal -->
         <div class="modal fade" id="edit-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
