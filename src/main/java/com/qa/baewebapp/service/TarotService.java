@@ -4,6 +4,7 @@ package com.qa.baewebapp.service;
 import java.util.List;
 import org.springframework.stereotype.Service;
 import com.qa.baewebapp.domain.Tarot;
+import com.qa.baewebapp.exceptions.TarotNotFoundException;
 import com.qa.baewebapp.repo.TarotRepo;
 
 @Service
@@ -24,7 +25,7 @@ public class TarotService {
 		
 		// Get By ID (get one tarot) 
 		public Tarot getById(long id) {
-			return repo.findById(id).get();//orElseThrow(TarotNotFoundException::new);
+			return repo.findById(id).orElseThrow(TarotNotFoundException::new);
 		}
 
 		// Get By number (get one tarot)
