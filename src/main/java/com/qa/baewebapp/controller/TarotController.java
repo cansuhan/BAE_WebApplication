@@ -76,4 +76,5 @@ public class TarotController {
 				new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 
+
 }
