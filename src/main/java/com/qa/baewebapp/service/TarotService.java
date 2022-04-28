@@ -40,6 +40,7 @@ public class TarotService {
 		// Update a tarot card
 		public Tarot update(long id, Tarot tarot) {  
 			Tarot existing = repo.findById(id).get(); 	// Get the EXISTING card
+			existing.setNumber(tarot.getNumber());
 			existing.setCard(tarot.getCard()); 			// Update existing card details
 			existing.setUpright(tarot.getUpright()); 
 			existing.setReversed(tarot.getReversed());
