@@ -39,7 +39,7 @@ public class TarotControllerIntegrationTest {
 
 	@Test
 	public void createTest() throws Exception {
-		Tarot entry = new Tarot(1L, 20, "Judgement", "Rites of Passage", "Forcing an Outcome");
+		Tarot entry = new Tarot(20, "Judgement", "Rites of Passage", "Forcing an Outcome");
 		String entryAsJSON = mapper.writeValueAsString(entry);
 
 		Tarot result = new Tarot(2L, 20, "Judgement", "Rites of Passage", "Forcing an Outcome");
