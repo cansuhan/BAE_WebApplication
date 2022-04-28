@@ -16,10 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.qa.baewebapp.domain.Tarot;
 import com.qa.baewebapp.service.TarotService;
+import com.qa.baewebapp.controller.TarotController;
 //import com.qa.baewebapp.exceptions.TarotNotFoundException;
-//import com.qa.baewebapp.service.TarotService;
 
-@SpringBootApplication
 @RestController
 @CrossOrigin
 @RequestMapping ("/tarot")

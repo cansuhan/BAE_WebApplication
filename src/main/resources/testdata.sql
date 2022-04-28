@@ -1,0 +1,1 @@
+INSERT INTO `tarot` (`cardnumber`, `card`, `upright`, `reversed`) VALUES (20, 'Judgement', 'Rites of Passage', 'Forcing an Outcome');

@@ -22,13 +22,13 @@ public class Tarot {
 	private long id;
 	
 	// Set column names
-	@Column(nullable = false, unique = true)
+	@Column(name = "cardnumber", nullable = false, unique = true)
 	private int number;
 	@Column(nullable = false) 	// This column cannot be null
 	private String card;
-	@Column
+	@Column(nullable = false)
 	private String upright;
-	@Column
+	@Column(nullable = false)
 	private String reversed;
   
   
