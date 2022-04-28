@@ -9,6 +9,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
+
 @Entity
 @Table(name="tarot")
 public class Tarot {
@@ -19,7 +22,7 @@ public class Tarot {
 	private long id;
 	
 	// Set column names
-	@Column(nullable = false)
+	@Column(nullable = false, unique = true)
 	private int number;
 	@Column(nullable = false) 	// This column cannot be null
 	private String card;
