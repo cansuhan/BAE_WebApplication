@@ -22,7 +22,7 @@ import com.qa.baewebapp.service.TarotService;
 @SpringBootApplication
 @RestController
 @CrossOrigin
-@RequestMapping //("/tarot")
+@RequestMapping ("/tarot")
 public class TarotController {
 	
 	private TarotService service;
