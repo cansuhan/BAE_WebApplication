@@ -77,7 +77,8 @@ const printResult = (result) => {
 
     ENTRY.appendChild(VALUES);
     ENTRY_DIV.appendChild(ENTRY);
-
+    ENTRY_DIV.appendChild(EDIT);
+    ENTRY_DIV.appendChild(DEL);
     RESULTS_DIV.appendChild(ENTRY_DIV);
 }
 
