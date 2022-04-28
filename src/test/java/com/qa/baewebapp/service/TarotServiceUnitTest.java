@@ -42,7 +42,7 @@ public class TarotServiceUnitTest {
 	@Test
 	void testUpdate() {
 		long id = 1L;
-		Tarot existingTarot = new Tarot(1L, 19, "Judgement", "Rites of Passage", "Forcing an Outcome");
+		Tarot existingTarot = new Tarot(1L, 22, "Judgement", "Rites of Passage", "Forcing an Outcome");
 		Tarot updatedTarot = new Tarot(1L, 19, "The Sun", "Happiness", "Delays");
 		
 		Mockito.when(this.repo.findById(id)).thenReturn(Optional.of(existingTarot));
