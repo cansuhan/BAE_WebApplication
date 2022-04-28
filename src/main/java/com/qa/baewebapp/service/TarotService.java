@@ -44,7 +44,7 @@ public class TarotService {
 			existing.setCard(tarot.getCard()); 			// Update existing card details
 			existing.setUpright(tarot.getUpright()); 
 			existing.setReversed(tarot.getReversed());
-			return existing; 
+			return repo.saveAndFlush(existing); 
 		}
 
 		// Delete a tarot card
