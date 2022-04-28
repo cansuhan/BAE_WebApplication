@@ -41,14 +41,17 @@ public class TarotServiceUnitTest {
 	
 	@Test
 	void testUpdate() {
-		Mockito.when(this.repo.findById(1L)).thenReturn(Optional.of(new Tarot(20, "Judgement", "Rites of Passage", "Forcing an Outcome")));
-		Mockito.when(this.repo.save(new Tarot(1L, 20, "Judgement", "Rites of Passage", "Forcing an Outcome")))
-				.thenReturn(new Tarot(1L, 20, "Judgement", "Rites of Passage", "Forcing an Outcome"));
+		long id = 1L;
+		Tarot existingTarot = new Tarot(1L, 19, "Judgement", "Rites of Passage", "Forcing an Outcome");
+		Tarot updatedTarot = new Tarot(1L, 19, "The Sun", "Happiness", "Delays");
 		
-		assertThat(this.service.update(1L, new Tarot(20, "Judgement", "Rites of Passage", "Forcing an Outcome")));
+		Mockito.when(this.repo.findById(id)).thenReturn(Optional.of(existingTarot));
+		Mockito.when(this.repo.save(updatedTarot)).thenReturn(updatedTarot);
+		
+		assertThat(this.service.update(id, new Tarot(19, "The Sun", "Happiness", "Delays"))).isEqualTo(updatedTarot);
 		
 		Mockito.verify(this.repo, Mockito.times(1)).findById(1L);
-		Mockito.verify(this.repo, Mockito.times(1)).save(new Tarot(1L, 20, "Judgement", "Rites of Passage", "Forcing an Outcome"));
+		Mockito.verify(this.repo, Mockito.times(1)).save(updatedTarot);
 		
 	}
 }
