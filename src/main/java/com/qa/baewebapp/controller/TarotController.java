@@ -52,7 +52,7 @@ public class TarotController {
 	
 	// Get by Tarot Card Number (get one tarot card)
 		@GetMapping("/getByNumber/{number}")
-		public ResponseEntity<Tarot> getByNumber(@PathVariable String number) {
+		public ResponseEntity<Tarot> getByNumber(@PathVariable int number) {
 			return new ResponseEntity<Tarot>(service.getByNumber(number), HttpStatus.OK);
 		}
 		
