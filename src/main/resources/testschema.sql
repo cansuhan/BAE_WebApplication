@@ -1,0 +1,10 @@
+DROP TABLE IF EXISTS tarot CASCADE;
+
+CREATE TABLE tarot (
+    id INT AUTO_INCREMENT,
+    cardnumber INT UNIQUE NOT NULL,
+    card VARCHAR(255) NOT NULL,
+    upright VARCHAR(255) NOT NULL,
+    reversed VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id)
+);

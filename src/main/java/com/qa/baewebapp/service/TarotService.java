@@ -6,6 +6,9 @@ import org.springframework.stereotype.Service;
 import com.qa.baewebapp.domain.Tarot;
 import com.qa.baewebapp.exceptions.TarotNotFoundException;
 import com.qa.baewebapp.repo.TarotRepo;
+import com.qa.baewebapp.service.TarotService;
+import com.qa.baewebapp.controller.TarotController;
+
 
 @Service
 public class TarotService {
