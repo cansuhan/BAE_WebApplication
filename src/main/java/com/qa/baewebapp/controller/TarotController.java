@@ -3,7 +3,6 @@ package com.qa.baewebapp.controller;
 import java.util.List;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -23,7 +22,7 @@ import com.qa.baewebapp.service.TarotService;
 @SpringBootApplication
 @RestController
 @CrossOrigin
-@RequestMapping //("/tarot")
+@RequestMapping ("/tarot")
 public class TarotController {
 	
 	private TarotService service;
@@ -52,7 +51,7 @@ public class TarotController {
 	
 	// Get by Tarot Card Number (get one tarot card)
 		@GetMapping("/getByNumber/{number}")
-		public ResponseEntity<Tarot> getByNumber(@PathVariable String number) {
+		public ResponseEntity<Tarot> getByNumber(@PathVariable int number) {
 			return new ResponseEntity<Tarot>(service.getByNumber(number), HttpStatus.OK);
 		}
 		
@@ -76,5 +75,6 @@ public class TarotController {
 			return (service.delete(id))? new ResponseEntity<>(HttpStatus.NO_CONTENT) : 
 				new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
+
 
 }

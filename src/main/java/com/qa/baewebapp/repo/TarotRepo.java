@@ -10,7 +10,7 @@ import com.qa.baewebapp.domain.Tarot;
 @Repository
 public interface TarotRepo extends JpaRepository <Tarot, Long>{
 	
-	Optional<Tarot> findByNumber(String number);
+	Optional<Tarot> findByNumber(int number);
 	
 	//	@Query(value = "SELECT * FROM user WHERE number = ?1", nativeQuery=true)
 	//	Optional<User> findByNumber(String number);
