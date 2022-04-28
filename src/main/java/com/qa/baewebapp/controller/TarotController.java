@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.qa.baewebapp.domain.Tarot;
 import com.qa.baewebapp.service.TarotService;
-//import com.qa.baewebapp.exceptions.UserNotFoundException;
-//import com.qa.baewebapp.service.UserService;
+//import com.qa.baewebapp.exceptions.TarotNotFoundException;
+//import com.qa.baewebapp.service.TarotService;
 
 @SpringBootApplication
 @RestController
@@ -41,7 +41,7 @@ public class TarotController {
 	@GetMapping("/getById/{id}")
 	public ResponseEntity<Tarot> getById(@PathVariable long id) {
 		return new ResponseEntity<Tarot>(service.getById(id), HttpStatus.OK);
-	
+	}
 	
 //	// Get
 //	@GetMapping("/hello") // localhost:8080/hello
@@ -66,7 +66,7 @@ public class TarotController {
 		// Put
 		@PutMapping("/update/{id}") 	// localhost:8080/update/id
 		public ResponseEntity<Tarot> update(@PathVariable long id, @RequestBody Tarot tarot) {
-			return new ResponseEntity<Tarot>(service.update(tarot), HttpStatus.ACCEPTED);
+			return new ResponseEntity<Tarot>(service.update(id, tarot), HttpStatus.ACCEPTED);
 		}
 		
 		
