@@ -47,19 +47,19 @@ const renderTarot = (tarot) => {
     const tarotNumber = document.createElement("p");
     tarotNumber.innerText = `Number: ${tarot.number}`; 
     tarotNumber.classList.add("card-number");
-    // tarotNumber.addEventListener('click', (e) => updateField(e, tarot.id));
+    tarotNumber.addEventListener('click', (e) => updateField(e, tarot.id));
     newTarot.appendChild(tarotNumber);
 
     const tarotUpright = document.createElement("p");
     tarotUpright.innerText = `Upright: ${tarot.upright}`;
     tarotUpright.classList.add("card-text");
-    // tarotUpright.addEventListener('click', (e) => updateField(e, tarot.id));
+    tarotUpright.addEventListener('click', (e) => updateField(e, tarot.id));
     newTarot.appendChild(tarotUpright);
 
     const tarotReversed = document.createElement("p");
     tarotReversed.innerText = `Reversed: ${tarot.reversed}`; 
     tarotReversed.classList.add("card-text");
-    // tarotReversed.addEventListener('click', (e) => updateField(e, tarot.id));
+    tarotReversed.addEventListener('click', (e) => updateField(e, tarot.id));
     newTarot.appendChild(tarotReversed);
 
     const deleteButton = document.createElement('button');
@@ -83,7 +83,7 @@ const deleteTarot = id => {
 }
 
 // const getById = () => {
-//     axios.get(`${ADDR}/tarot/get/${tarotId.value}`)
+//     axios.get(`${ADDR}/tarot/getById/${tarotId.value}`)
 //     .then(res => {
 //         const tarot = res.data;
 //         getByIdOutput.innerHTML = "";
