@@ -7,50 +7,51 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
 @Entity
+@Table(name="tarot")
 public class Tarot {
 	
 	// Primary Key
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private  long id;
+	private long id;
 	
 	// Set column names
-	@Column(name = "Card No")
+	@Column(name = "cardnumber", nullable = false, unique = true)
 	private int number;
-	@Column(name = "Card", nullable = false) 	// This column cannot be null
+	@Column(nullable = false) 	// This column cannot be null
 	private String card;
-	@Column(name = "UprightMeaning")
+	@Column(nullable = false)
 	private String upright;
-	@Column(name = "ReversedMeaning")
+	@Column(nullable = false)
 	private String reversed;
-	@Column(name = "ZodiacSign")
-	private String zodiac;
-	
-	
+  
+  
 	// Default Constructor
 	public Tarot() {}
 	
 	// Constructor with values set - used for creating/inserting
-	public Tarot(int number, String card, String upright, String reversed, String zodiac) {
+	public Tarot(int number, String card, String upright, String reversed) {
 		super();
 		this.number = number;
 		this.card = card;
 		this.upright = upright;
 		this.reversed = reversed;
-		this.zodiac = zodiac;
 	}
 	
 	// Used for reading/selecting (and testing)
-	public Tarot(long id, int number, String card, String upright, String reversed, String zodiac) {
+	public Tarot(long id, int number, String card, String upright, String reversed) {
 		super();
 		this.id = id;
 		this.number = number;
 		this.card = card;
 		this.upright = upright;
 		this.reversed = reversed;
-		this.zodiac = zodiac;
 	}
 	
 	// Getters and Setters
@@ -86,24 +87,17 @@ public class Tarot {
 	public void setReversed(String reversed) {
 		this.reversed = reversed;
 	}
-	public String getZodiac() {
-		return zodiac;
-	}
-	public void setZodiac(String zodiac) {
-		this.zodiac = zodiac;
-	}
 
 
 	@Override
 	public String toString() {
 		return "Tarot [id=" + id + ", number=" + number + ", card=" + card + ", upright=" + upright + ", reversed="
-				+ reversed + ", zodiac=" + zodiac + "]";
+				+ reversed + "]";
 	}
 
-	// 
 	@Override
 	public int hashCode() {
-		return Objects.hash(card, id, number, reversed, upright, zodiac);
+		return Objects.hash(card, id, number, reversed, upright);
 	}
 
 	@Override
@@ -116,9 +110,8 @@ public class Tarot {
 			return false;
 		Tarot other = (Tarot) obj;
 		return Objects.equals(card, other.card) && id == other.id && number == other.number
-				&& Objects.equals(reversed, other.reversed) && Objects.equals(upright, other.upright)
-				&& Objects.equals(zodiac, other.zodiac);
+				&& Objects.equals(reversed, other.reversed) && Objects.equals(upright, other.upright);
 	}
-	
+
 	
 }
