@@ -91,7 +91,7 @@ const deleteTarot = id => {
 //     }).catch(err => console.log(err));
 // }
 
-document.querySelector("input#searchName").addEventListener('input', ({target: {value}}) => {
+document.querySelector("input#searchNumber").addEventListener('input', ({target: {value}}) => {
     console.log("SEARCH: ", value);
     if (!value) return getAll();
     axios.get(`${ADDR}/tarot/getByNumber/${value}`)
