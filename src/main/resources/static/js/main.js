@@ -39,14 +39,14 @@ const renderTarot = (tarot) => {
     newTarot.classList.add("card-body");
     
     const tarotName = document.createElement("h3");
-    tarotName.innerText = tarot.name;
+    tarotName.innerText = `Name: ${tarot.name}`;
     tarotName.classList.add("card-title");
     newTarot.appendChild(tarotName);
-    // tarotName.addEventListener('click', (e) => updateField(e, tarot.id));
+    tarotName.addEventListener('click', (e) => updateField(e, tarot.id));
 
     const tarotNumber = document.createElement("p");
     tarotNumber.innerText = `Number: ${tarot.number}`; 
-    tarotNumber.classList.add("card-text");
+    tarotNumber.classList.add("card-number");
     // tarotNumber.addEventListener('click', (e) => updateField(e, tarot.id));
     newTarot.appendChild(tarotNumber);
 
