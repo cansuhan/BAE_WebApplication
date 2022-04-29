@@ -6,9 +6,10 @@ body {
   margin: 3px;
   padding: 5px;
   background-image: url("../media/backgorundwalks.JPG");
+  background-color: black;
   background-size: auto;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-repeat: cover;
+  /* background-position: center; */
   font-family: 'Nunito', sans-serif;
   text-align: center;
 }
@@ -196,4 +197,18 @@ footer {
     color: aqua;
 }
 
+.backColour {
+  color: black;
+}
 
+/* .cardCol {
+  color: black;
+} */
+
+/* .card-group {
+  background-color: rgba(128, 128, 128, 0);
+}
+
+.form-label {
+  color: black;
+} */
